@@ -6,12 +6,17 @@ export const uploadFiles = () => {
     // donde se almacenará el archivo
     destination: "./uploads",
     filename: (_req, file, cb) => {
-      let extension = file.originalname.slice(file.originalname.lastIndexOf("."))
-      cb(null, Date.now() + extension);
+      const fileName = `${Date.now()}-${file.originalname}`
+      cb(null, fileName);
     },
   });
 
-  let upload = multer({ storage: storage }).single("file")
+  let upload = multer({ 
+    storage: storage,
+    fileFilter: (_req, _file, cb)=>{
+      cb(null, true)
+    }
+  }).array("files", 100)
 
-  return upload
+  return upload;
 };
