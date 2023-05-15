@@ -18,21 +18,6 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors());
 
-// aplicando donde será el storage de multer
-let storage = multer.diskStorage({
-  // con destination se configura donde se guardarán los archivos
-  destination: function (req, file, cb) {
-    cb(null, "./uploads");
-  },
-  
-  // el nombre se genera utilizando el nombre del campo del archivo y la fecha y hora actual
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now());
-  },
-});
-
-let upload = multer({ storage: storage });
-
 // ? routing
 app.use("/items", showItems);
 app.use("/auth", login);
