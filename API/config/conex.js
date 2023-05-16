@@ -1,8 +1,8 @@
-import { createPool } from "mysql2/promise"
+import { createPool } from "mysql2/promise";
 
 export const Pool = createPool({
-    host: "localhost",
-    database: "",
-    user: "",
-    password: "",
-})
+  host: "localhost",
+  database: "allbay",
+  user: "root",
+  password: "",
+});

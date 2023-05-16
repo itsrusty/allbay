@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { UploadOutlined } from "@ant-design/icons";
 import { Button, Upload } from "antd";
+import AlertSuccess from "./error/AlertSuccess.jsx";
+import AlertEmpty from "./error/AlertEmpty.jsx"
 
 const App = () => {
   const [fileList, setFileList] = useState([]);
@@ -10,13 +12,6 @@ const App = () => {
     fileList.forEach((file) => {
       formData.append("image", file.originFileObj);
     });
-
-    // envía la petición con el FormData a la ruta que manejará la subida de la imagen
-    // const response = await fetch("http://localhost:5000/upload/file", {
-    //   method: "POST",
-    //   body: formData,
-    // });
-    // console.log(response);
   };
 
   const handleFileListChange = ({ fileList }) => {
@@ -34,11 +29,17 @@ const App = () => {
         className="upload-list-inline"
       >
         <Button icon={<UploadOutlined />}>Subir imagen</Button>
-      </Upload>
-      {fileList.length > 0
-        ? console.log("archivo subido!")
-        : console.log("vacío")}
 
+        <div>
+          {fileList.length > 0 ? (
+            <AlertSuccess></AlertSuccess>
+          ) : (
+            <span></span>
+            // <AlertEmpty />
+            // <Button icon={<UploadOutlined />}>Subir imagen</Button>
+          )}
+        </div>
+      </Upload>
     </>
   );
 };

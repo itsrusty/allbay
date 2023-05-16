@@ -1,15 +1,17 @@
-import { Button, Empty } from "antd";
+import { Empty } from "antd";
 import ButtonUploadFile from "./ButtonUploadFile.jsx";
+import "./styles/EmptyButton.css"
 
-const App = () => (
+const App = (props) => (
   <Empty
+    className="emptyButton"
     image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
     imageStyle={{
       height: 60,
     }}
     description={
       <span>
-        No has subido ningún <a href="#API">Archivo</a>
+        Puedes subir un máximo de 100 <a href="#API">Archivos 👍</a>
       </span>
     }
   >
