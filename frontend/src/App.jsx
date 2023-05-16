@@ -1,20 +1,16 @@
-import './App.css'
+import "./App.css";
+import Navbar from "./components/Navbar.jsx";
+// import Card from "./components/Card.jsx";
+import EmptyButton from "./components/EmptyButton.jsx";
 
 function App() {
-  // api
-  const getData = async ()=>{
-    const API = "http://localhost:3000/auth/login"
-    const data = await fetch(API)
-    const resolveData = await data.json()
-    console.log(resolveData)
-  }
-  getData()
-  
   return (
-    <div className='container'>
-      {}
-    </div>
-  )
+    <main className="main">
+      <Navbar />
+      <EmptyButton />
+      {/* <Card /> */}
+    </main>
+  );
 }
 
-export default App
+export default App;
