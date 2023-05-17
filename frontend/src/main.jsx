@@ -6,6 +6,9 @@ import ReactDom from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../routes/root.jsx";
 import ErrorPage from "./components/error/error-page.jsx";
+import AllProducts from "./pages/AllProducts.jsx";
+import Login from "./pages/Login.jsx";
+import CreateNewUser from "./pages/CreateNewUser.jsx";
 
 // routing
 const router = createBrowserRouter([
@@ -16,17 +19,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/all",
-    element: "testing",
+    element: <AllProducts />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/login",
-    element: "/login",
+    element: <Login />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/new/user",
-    element: "/create-user",
+    path: "/new-user",
+    element: <CreateNewUser />,
     errorElement: <ErrorPage />,
   },
 ]);
