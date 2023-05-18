@@ -17,6 +17,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { Link } from "react-router-dom";
+import "./styles/navigator.css"
 
 // config theme application
 const darkTheme = createTheme({
@@ -135,7 +137,9 @@ export default function PrimarySearchAppBar() {
             <MailIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>
+          <Link to={"/files"}>Ver archivos</Link>
+        </p>
       </MenuItem>
       <MenuItem>
         <IconButton

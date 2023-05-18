@@ -2,7 +2,8 @@ import { useState } from "react";
 import { UploadOutlined } from "@ant-design/icons";
 import { Button, Upload } from "antd";
 import AlertSuccess from "./error/AlertSuccess.jsx";
-import AlertEmpty from "./error/AlertEmpty.jsx"
+import AlertEmpty from "./error/AlertEmpty.jsx";
+import ButtonShowData from "./ButtonShowData.jsx";
 
 const App = () => {
   const [fileList, setFileList] = useState([]);
@@ -34,9 +35,7 @@ const App = () => {
           {fileList.length > 0 ? (
             <AlertSuccess></AlertSuccess>
           ) : (
-            <span></span>
-            // <AlertEmpty />
-            // <Button icon={<UploadOutlined />}>Subir imagen</Button>
+            <ButtonShowData></ButtonShowData>
           )}
         </div>
       </Upload>

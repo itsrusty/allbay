@@ -16,7 +16,6 @@ export default function ErrorPage() {
       <button className="button-link-to">
         <Link to={"/"}>Volver a inicio</Link>
       </button>
-      {/* <button><a to="/testing">Return</a></button> */}
     </div>
   );
 }
