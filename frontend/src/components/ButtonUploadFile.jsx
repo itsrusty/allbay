@@ -35,7 +35,8 @@ const App = () => {
           {fileList.length > 0 ? (
             <AlertSuccess></AlertSuccess>
           ) : (
-            <ButtonShowData></ButtonShowData>
+            <span></span>
+            // <ButtonShowData></ButtonShowData>
           )}
         </div>
       </Upload>
